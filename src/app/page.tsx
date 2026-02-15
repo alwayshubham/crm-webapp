@@ -8,10 +8,10 @@ export default function LandingPage() {
       {/* Navbar */}
       <nav className="border-b border-gray-100 dark:border-gray-800 p-6 flex justify-between items-center max-w-7xl mx-auto">
         <div className="text-2xl font-bold text-blue-600">CRM Pro</div>
-        <div className="space-x-6">
+        {/* <div className="space-x-6">
           <Link href="/login" className="text-sm font-medium text-gray-600 hover:text-blue-600">Sign In</Link>
           <Link href="/signup" className="text-sm font-medium bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700">Get Started</Link>
-        </div>
+        </div> */}
       </nav>
 
       {/* Hero Section */}
@@ -22,10 +22,10 @@ export default function LandingPage() {
         <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-10">
           The all-in-one CRM for high-performance sales teams. Manage leads, track your pipeline, and automate follow-ups with AI-powered insights.
         </p>
-        <div className="flex justify-center space-x-4">
+        {/* <div className="flex justify-center space-x-4">
           <Link href="/signup" className="bg-blue-600 text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-blue-700 shadow-xl shadow-blue-500/20"> Start Free Trial</Link>
           <button className="bg-gray-100 text-gray-900 px-8 py-4 rounded-xl text-lg font-bold hover:bg-gray-200">View Demo</button>
-        </div>
+        </div> */}
       </div>
 
       {/* Features Grid */}
