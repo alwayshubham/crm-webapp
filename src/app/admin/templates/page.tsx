@@ -73,7 +73,7 @@ export default function AdminTemplatesPage() {
     return (
         <div className="space-y-6">
             <div className="flex justify-between items-center">
-                <h1 className="text-2xl font-bold text-gray-800">Email Templates</h1>
+                <h1 className="text-2xl font-bold text-gray-800 dark:text-white">Email Templates</h1>
                 <button
                     onClick={() => {
                         setEditingTemplate(null);
@@ -93,10 +93,10 @@ export default function AdminTemplatesPage() {
                     </div>
                 ) : (
                     templates.map((template) => (
-                        <div key={template.id} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                            <h3 className="font-bold text-lg text-gray-900 mb-2">{template.name}</h3>
-                            <p className="text-sm text-gray-500 mb-1"><strong>Subject:</strong> {template.subject}</p>
-                            <p className="text-xs text-gray-400 mb-4 line-clamp-3">{template.body}</p>
+                        <div key={template.id} className="bg-white dark:bg-gray-800 p-6 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md transition">
+                            <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">{template.name}</h3>
+                            <p className="text-sm text-gray-500 dark:text-gray-400 mb-1"><strong>Subject:</strong> {template.subject}</p>
+                            <p className="text-xs text-gray-400 dark:text-gray-500 mb-4 line-clamp-3">{template.body}</p>
                             <div className="flex space-x-2">
                                 <button
                                     onClick={() => openEditModal(template)}

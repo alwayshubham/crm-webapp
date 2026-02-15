@@ -66,7 +66,7 @@ export default function AdminSettingsPage() {
     return (
         <div className="space-y-6">
             <div className="flex justify-between items-center">
-                <h1 className="text-2xl font-bold text-gray-800">Pipeline Settings</h1>
+                <h1 className="text-2xl font-bold text-gray-800 dark:text-white">Pipeline Settings</h1>
                 <button
                     onClick={() => {
                         setEditingStage(null);
@@ -79,16 +79,16 @@ export default function AdminSettingsPage() {
                 </button>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden">
                 <table className="w-full">
-                    <thead className="bg-gray-50 border-b border-gray-200">
+                    <thead className="bg-gray-50 dark:bg-gray-700 border-b border-gray-200 dark:border-gray-600">
                         <tr>
-                            <th className="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Order</th>
-                            <th className="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Stage Name</th>
-                            <th className="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Actions</th>
+                            <th className="px-6 py-3 text-left text-xs font-bold text-gray-500 dark:text-gray-300 uppercase tracking-wider">Order</th>
+                            <th className="px-6 py-3 text-left text-xs font-bold text-gray-500 dark:text-gray-300 uppercase tracking-wider">Stage Name</th>
+                            <th className="px-6 py-3 text-left text-xs font-bold text-gray-500 dark:text-gray-300 uppercase tracking-wider">Actions</th>
                         </tr>
                     </thead>
-                    <tbody className="bg-white divide-y divide-gray-200">
+                    <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
                         {stages.length === 0 ? (
                             <tr><td colSpan={3} className="px-6 py-8 text-center text-gray-400">No stages found.</td></tr>
                         ) : (
@@ -99,7 +99,7 @@ export default function AdminSettingsPage() {
                                             {stage.order_num}
                                         </span>
                                     </td>
-                                    <td className="px-6 py-4 font-medium text-gray-900">{stage.name}</td>
+                                    <td className="px-6 py-4 font-medium text-gray-900 dark:text-white">{stage.name}</td>
                                     <td className="px-6 py-4">
                                         <div className="flex space-x-2">
                                             <button
