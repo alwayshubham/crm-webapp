@@ -17,7 +17,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
 
     useEffect(() => {
         const storedUser = localStorage.getItem('crm_user');
-        if (!storedUser && !pathname.includes('/login') && !pathname.includes('/signup')) {
+        if (!storedUser && !pathname.includes('/login') && !pathname.includes('/signup') && !pathname.includes('/forgot-password') && !pathname.includes('/reset-password')) {
             router.push('/login');
         } else if (storedUser) {
             setUser(JSON.parse(storedUser));
@@ -29,11 +29,11 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
         router.push('/login');
     };
 
-    if (!user && !pathname.includes('/login') && !pathname.includes('/signup')) {
+    if (!user && !pathname.includes('/login') && !pathname.includes('/signup') && !pathname.includes('/forgot-password') && !pathname.includes('/reset-password')) {
         return <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex items-center justify-center">Loading...</div>;
     }
 
-    if (pathname.includes('/login') || pathname.includes('/signup')) {
+    if (pathname.includes('/login') || pathname.includes('/signup') || pathname.includes('/forgot-password') || pathname.includes('/reset-password')) {
         return <>{children}</>;
     }
 
@@ -63,8 +63,8 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
                             key={item.href}
                             href={item.href}
                             className={`block px-4 py-2 text-sm font-medium rounded-md ${pathname === item.href
-                                    ? 'bg-blue-50 text-blue-700 dark:bg-blue-900/50 dark:text-blue-200'
-                                    : 'text-gray-600 hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-gray-700'
+                                ? 'bg-blue-50 text-blue-700 dark:bg-blue-900/50 dark:text-blue-200'
+                                : 'text-gray-600 hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-gray-700'
                                 }`}
                         >
                             {item.name}
