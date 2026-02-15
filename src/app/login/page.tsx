@@ -9,6 +9,7 @@ export default function LoginPage() {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
+    const [showForgotPassword, setShowForgotPassword] = useState(false);
     const router = useRouter();
 
     const handleLogin = async (e: React.FormEvent) => {
@@ -26,6 +27,7 @@ export default function LoginPage() {
             const data = await res.json();
 
             if (!res.ok) {
+                setShowForgotPassword(true);
                 throw new Error(data.error || 'Login failed');
             }
 
@@ -95,9 +97,11 @@ export default function LoginPage() {
                     </div>
 
                     <div className="text-center flex flex-col space-y-2">
-                        <Link href="/forgot-password" title="Forgot Password?" className="text-sm text-blue-600 hover:text-blue-500 font-medium">
-                            Forgot Password?
-                        </Link>
+                        {showForgotPassword && (
+                            <Link href="/forgot-password" title="Forgot Password?" className="text-sm text-blue-600 hover:text-blue-500 font-medium">
+                                Forgot Password?
+                            </Link>
+                        )}
                         <Link href="/signup" className="text-sm text-blue-600 hover:text-blue-500">
                             Don't have an account? Sign up
                         </Link>
